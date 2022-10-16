@@ -1,30 +1,29 @@
-package com.example.myapplication.ui.slideshow;
+package com.example.myapplication.ui.AgregarEliminar;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.myapplication.databinding.FragmentSlideshowBinding;
+import com.example.myapplication.databinding.FragmentAgregarEliminarBinding;
 
-public class SlideshowFragment extends Fragment {
+public class Agregar_EliminarFragment extends Fragment {
 
-    private FragmentSlideshowBinding binding;
+    private FragmentAgregarEliminarBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        SlideshowViewModel slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        Agregar_EliminarViewModel slideshowViewModel =
+                new ViewModelProvider(this).get(Agregar_EliminarViewModel.class);
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
+        binding = FragmentAgregarEliminarBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
+        final TextView textView = binding.Agregar;
         slideshowViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
